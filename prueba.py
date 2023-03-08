@@ -1,15 +1,15 @@
 import gi
-from gi.overrides.Gtk import Gtk
 
 gi.require_version("Gtk", "3.0")
-from gi.repository import *
+from gi.repository import Gtk
 
-from conexionBD import conexionBD
+from conexionBD import *
 
 
-class treeview(Gtk.Window):
+class Aplicacion(Gtk.Window):
+
     def __init__(self):
-        super().__init__(title="Exemplo TreeView CellRendererCombo")
+        super().__init__(title="Exemplo TreeView")
 
         caixaV = Gtk.Box(orientation=Gtk.orientation.VERTICAL, spacing=4)
         modelo = Gtk.ListStore(str, str, int)
@@ -54,6 +54,7 @@ class treeview(Gtk.Window):
         self.show_all()
 
 
+
 if __name__ == '__main__':
-    treeview()
+    Aplicacion()
     Gtk.main()
