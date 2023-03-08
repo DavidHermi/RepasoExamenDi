@@ -1,17 +1,16 @@
 import gi
-from gi.overrides.Gtk import Gtk
 
-gi.require_version("Gtk", "3.0")
-from gi.repository import *
+gi.require_version("Gtk", "4.0")
+from gi.repository import Gtk
 
-from conexionBD import conexionBD
+from conexionBD import conexionBD, ConexionBD
 
 
 class treeview(Gtk.Window):
     def __init__(self):
         super().__init__(title="Exemplo TreeView CellRendererCombo")
 
-        caixaV = Gtk.Box(orientation=Gtk.orientation.VERTICAL, spacing=4)
+        caixaV = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
         modelo = Gtk.ListStore(str, str, int)
         trvPerfilesUsuarios = Gtk.TreeView(model=modelo)
         modeloPerfis = Gtk.ListStore(str, str)
@@ -27,7 +26,9 @@ class treeview(Gtk.Window):
         columna3 = Gtk.TreeViewColumn("perfil", celda3, text=2)
         trvPerfilesUsuarios.append_column(columna3)
 
-        bd = conexionBD("perfisUsuarios.bd")
+
+
+        bd = conectaBD("perfisUsuarios.bd")
         conexBD = bd.conectaBD()
         cursorBD = bd.creaCursor()
         sqlUsuarios = "SELECT dni,nome  FROM usuario"
