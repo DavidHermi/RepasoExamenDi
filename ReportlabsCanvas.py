@@ -36,7 +36,7 @@ imagenes = []
 
 # Creamos imagen de logotipo de empresa, y lo colocamos en
 # la esquina inferior derecha.
-imagen = Image(400, 0, 130, 150, "d:\\python\\pdf\logo_empresa.jpg")
+imagen = Image(400, 0, 130, 150, "C:/Users/David/PycharmProjects/RepasoExamenDi/tortuga.jpg")
 
 # Creamos dibujo y le añadimos imagen.
 dibujo = Drawing(30, 30)
