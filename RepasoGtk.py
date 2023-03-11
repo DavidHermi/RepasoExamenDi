@@ -28,7 +28,7 @@ class treeview(Gtk.Window):
 
 
 
-        bd = conectaBD("perfisUsuarios.bd")
+        bd = conexionBD("perfisUsuarios.bd")
         conexBD = bd.conectaBD()
         cursorBD = bd.creaCursor()
         sqlUsuarios = "SELECT dni,nome  FROM usuario"
